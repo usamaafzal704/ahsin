@@ -83,9 +83,7 @@ var misha_loadmore_params = {"ajaxurl":"https:\/\/www.theaccountancy.co.uk\/wp-a
 <link rel='shortlink' href='https://www.theaccountancy.co.uk/?p=186047' />
 <link rel="alternate" type="application/json+oembed" href="https://www.theaccountancy.co.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.theaccountancy.co.uk%2Flanding%2Fhomepage" />
 <link rel="alternate" type="text/xml+oembed" href="https://www.theaccountancy.co.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.theaccountancy.co.uk%2Flanding%2Fhomepage&#038;format=xml" />
-		<script>
-			document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );
-		</script>
+		
 				<style>
 			.no-js img.lazyload { display: none; }
 			figure.wp-block-image img.lazyloading { min-width: 150px; }
@@ -103,15 +101,6 @@ var misha_loadmore_params = {"ajaxurl":"https:\/\/www.theaccountancy.co.uk\/wp-a
     <link rel="apple-touch-icon" sizes="180x240" href="./titlelogo.jpg">
 
 
-	<!-- Side Menu Scripts -->
-	<script type="rocketlazyloadscript">
-		function openNav() {
-			document.getElementById("mySidenav").style.width = "280px";
-		}
-		function closeNav() {
-			document.getElementById("mySidenav").style.width = "0";
-		}
-	</script>
 
 	<!-- Custom CSS edited by TAP -->
 	<link data-minify="1" href="https://www.theaccountancy.co.uk/wp-content/cache/min/1/wp-content/themes/tap/assets/css/custom.css?ver=1688568227" rel="stylesheet">
@@ -130,24 +119,9 @@ var misha_loadmore_params = {"ajaxurl":"https:\/\/www.theaccountancy.co.uk\/wp-a
 
 
 
-<body class="page-template page-template-page-templates page-template-home-page-landing-alt-header page-template-page-templateshome-page-landing-alt-header-php page page-id-186047 page-child parent-pageid-14832"data-landing="true">
-
-	<!-- HEADER NOTICE FOR SHORT TERM MESSAGING -->
+<body id="body" class="page-template page-template-page-templates page-template-home-page-landing-alt-header page-template-page-templateshome-page-landing-alt-header-php page page-id-186047 page-child parent-pageid-14832"data-landing="true">
 
 
-<script type="rocketlazyloadscript">
-    var noticeClose = document.getElementById('notice-close');
-    var banner = document.getElementById('header-notice');
-
-    if(sessionStorage.getItem("headerNotice") === null) {
-        noticeClose.addEventListener('click', function(){
-            banner.classList.add('hide');
-            sessionStorage.setItem("headerNotice", "dismissed");
-        })
-    } else {
-        banner.classList.add('hide');
-    }
-</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,100&display=swap');
@@ -203,7 +177,69 @@ var misha_loadmore_params = {"ajaxurl":"https:\/\/www.theaccountancy.co.uk\/wp-a
   #topsection{
     padding-top: 11rem;
   }
+
+
+/* popUp Div */
+
+
+.popParent{
+    margin-top: 23px;
+    width:100%;
+    background-color: transparent;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    z-index: 1000000000;
+    visibility: hidden;
+}
+
+
+.popDiv{
+    text-align: center;
+    background-color: white;
+    position: fixed;
+    border-radius: 30px;
+    position: relative;
+    box-shadow: 1px 1px 20px 0px rgba(0,0,0,0.5);
+    padding: 5px;
+}
+
+.myActive{
+    visibility:visible ;
+}
+.clsbtn{
+    color: white;
+    font-size: large;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: linear-gradient(to bottom right,#0bf4ff,#14379d);
+    border: 1px solid transparent;
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+.clsbtn:hover{
+    background: linear-gradient(to bottom right,#08bcc6,#042487);
+}
+
+
+/* signup form */
+
+
+#mc_embed_signup_scroll .mc-field-group input {
+    transition: none !important;
+}
+.mce_inline_error{
+    margin-bottom: 0px !important;
+}
+
+
 </style>
+
+
+
 
 <header>
     <nav>
@@ -214,6 +250,74 @@ var misha_loadmore_params = {"ajaxurl":"https:\/\/www.theaccountancy.co.uk\/wp-a
         </div>
     </nav>
 </header>
+
+
+
+<!-- PopUp Div -->
+
+
+<div class="popParent" id="popParent">
+    
+        <div class="popDiv">
+            <button class="clsbtn" id="clsbtn">X</button>
+            <div id="mc_embed_shell">
+                <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+            <style type="text/css">
+                  #mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 600px;}
+                  @media screen and (max-width: 639px) {
+                        #mc_embed_signup{
+                            width: 440px;
+                        }
+                     }
+                  @media screen and (max-width: 476px) {
+                        #mc_embed_signup{
+                            width: 360px;
+                        }
+                        #popParent{
+                            margin-top: 60px;
+                        }
+                     }
+                  /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+                     We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+          </style>
+          <div id="mc_embed_signup">
+              <form action="https://gmail.us21.list-manage.com/subscribe/post?u=4fbda3bd54b2c34f166ebec2a&amp;id=0667409c1a&amp;f_id=005b59e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                  <div id="mc_embed_signup_scroll"><h2>Subscribe</h2>
+                      <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                      <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""><span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span></div><div class="mc-field-group"><label for="mce-FNAME">First Name <span class="asterisk">*</span></label><input type="text" name="FNAME" class="required text" id="mce-FNAME" required="" value=""></div><div class="mc-field-group"><label for="mce-LNAME">Last Name </label><input type="text" name="LNAME" class=" text" id="mce-LNAME" value=""></div><div class="mc-field-group"><label for="mce-PHONE">Phone Number <span class="asterisk">*</span></label><input type="text" name="PHONE" class="REQ_CSS" id="mce-PHONE" value=""></div>
+                  <div id="mce-responses" class="clear foot">
+                      <div class="response" id="mce-error-response" style="display: none;"></div>
+                      <div class="response" id="mce-success-response" style="display: none;"></div>
+                  </div>
+              <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                  /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+                  <input type="text" name="b_4fbda3bd54b2c34f166ebec2a_0667409c1a" tabindex="-1" value="">
+              </div>
+                  <div class="optionalParent">
+                      <div class="clear foot">
+                          <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                          <p class="brandingLogo" style="margin: 0px auto;"><a href="http://eepurl.com/ivhfdo" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" alt="referral badge"></a></p>
+                      </div>
+                  </div>
+              </div>
+          </form>
+          </div>
+          <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]=EMAIL;ftypes[0]=merge;,fnames[1]=FNAME;ftypes[1]=merge;,fnames[2]=LNAME;ftypes[2]=merge;,fnames[4]=PHONE;ftypes[4]=merge;,fnames[3]=ADDRESS;ftypes[3]=merge;,fnames[5]=BIRTHDAY;ftypes[5]=merge;false}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
+          
+        </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
     
 <!-- Home page - desktop --->
 
@@ -230,7 +334,7 @@ var misha_loadmore_params = {"ajaxurl":"https:\/\/www.theaccountancy.co.uk\/wp-a
 									<!-- Page Sub-header points -->
 					
 				<!-- Get a quote right away button -->
-				<a class="cta-button modal_button" id="CTAButtonOpen"> <i class="fas fa-calculator"></i>Get a quote right away </a>
+				<a class="cta-button modal_button multPop" id="CTAButtonOpen">Get a quote right away </a>
 			</div>
 
 			<div class="header-img">
@@ -277,7 +381,7 @@ var misha_loadmore_params = {"ajaxurl":"https:\/\/www.theaccountancy.co.uk\/wp-a
 							<h4 class="blue-text">£30.00</h4>							<p> per month </p>
 						</div>
 						<p>Complete accounting support with simplicity at a great price</p>
-						<a class="cta-button modal_button" role="button"> <i class="fas fa-calculator"></i>Get a quote right away </a>
+						<a class="cta-button modal_button multPop" role="button">Get a quote right away </a>
 				
 				</div>
 			</div>
@@ -291,7 +395,7 @@ var misha_loadmore_params = {"ajaxurl":"https:\/\/www.theaccountancy.co.uk\/wp-a
 							<h4 class="blue-text">£70.00</h4>							<p> per month </p>
 						</div>
 					<p>Professional accounting support for your growing companies</p>
-					<a class="cta-button modal_button" role="button"> <i class="fas fa-calculator"></i>Get a quote right away </a>
+					<a class="cta-button modal_button multPop" role="button"> Get a quote right away </a>
 				
 				</div>
 			</div>
@@ -305,7 +409,7 @@ var misha_loadmore_params = {"ajaxurl":"https:\/\/www.theaccountancy.co.uk\/wp-a
 							<h4 class="blue-text">£80.00</h4>							<p> per month </p>
 						</div>
 					<p> An accessible and efficient accounting service for you and your partners </p>
-						<a class="cta-button modal_button" role="button"> <i class="fas fa-calculator"></i>Get a quote right away </a>
+						<a class="cta-button modal_button multPop" role="button">Get a quote right away </a>
 					
 				</div>
 			</div>
@@ -338,27 +442,7 @@ var misha_loadmore_params = {"ajaxurl":"https:\/\/www.theaccountancy.co.uk\/wp-a
 			<!--  Animation --->
 				
         <div id='anim_14995' class='animate-me align-center'></div>
-        <script class='delay-lottie'>
-            window.addEventListener('DOMContentLoaded', function() {
-                const myImg_14995 = document.querySelector('#anim_14995');
-
-                observer = new IntersectionObserver((entry, observer) => {
-                    if (entry[0].intersectionRatio > 0) {
-                        var animation = bodymovin.loadAnimation({
-                            container: document.getElementById('anim_14995'),
-                            path: 'https://www.theaccountancy.co.uk/wp-content/themes/tap/assets/animations/pandle-ui.json',
-                            renderer: 'svg',
-                            loop: false,
-                            autoplay: true,
-                        });
-                        animation.setSpeed(1);
-                        observer.unobserve(entry[0].target);
-                    }
-                });
-                
-                observer.observe(myImg_14995);
-            });
-        </script>
+        
     				<style>
 				.pandle-bg svg { transform: scale(1.3) !important; }
 				</style>
@@ -372,7 +456,6 @@ var misha_loadmore_params = {"ajaxurl":"https:\/\/www.theaccountancy.co.uk\/wp-a
 		<div class="grid-row-span-6 grid-col-span-1-5 accounting-software">
 			
 			<img  style="max-width: 600px;"  width="600" height="61" alt="" class="logos-desktop lazyload" src="./booksoft.png" />
-			<img  style="max-width: 300px;"  alt="" data-src="https://www.theaccountancy.co.uk/wp-content/themes/tap/assets/images/accountancy-software-mobile.svg" class="logos-mobile lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
 		</div>
 
 	</div>
@@ -493,193 +576,13 @@ c
 
 </div>
 
-<!-- Much More Modal -->
-
-
-
-<!--  Footer --->
-
-<!-- Desktop Footer -->
-<div class="default-footer ">
-    <div class="full-width-grid grid-row-auto grid-col-5">
-
-        <div class="grid-col-span-1 grid-row-span-1 footer-resources">
-            <h4 class="white-text"> Who We Help </h4>
-            <ul id="menu-footer-who-we-help" class=""><li id="menu-item-139019" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139019"><a href="https://www.theaccountancy.co.uk/who-we-help/limited-company-accountants">Limited companies</a></li>
-<li id="menu-item-139021" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139021"><a href="https://www.theaccountancy.co.uk/who-we-help/sole-trader-accounting">Sole traders</a></li>
-<li id="menu-item-139022" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139022"><a href="https://www.theaccountancy.co.uk/who-we-help/partnership-accounting-services">Partnerships</a></li>
-<li id="menu-item-164685" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164685"><a href="https://www.theaccountancy.co.uk/who-we-help/limited-liability-partnership-accounting-services">Limited liability partnerships</a></li>
-<li id="menu-item-164682" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164682"><a href="https://www.theaccountancy.co.uk/who-we-help/freelancer-accounting-services">Freelancers</a></li>
-<li id="menu-item-139024" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139024"><a href="https://www.theaccountancy.co.uk/who-we-help/contractor-accounting-services">Contractors</a></li>
-<li id="menu-item-139026" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139026"><a href="https://www.theaccountancy.co.uk/who-we-help/small-business-accountants">Small businesses</a></li>
-<li id="menu-item-139027" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139027"><a href="https://www.theaccountancy.co.uk/who-we-help/startup-business-accountants">Startups</a></li>
-<li id="menu-item-139028" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139028"><a href="https://www.theaccountancy.co.uk/who-we-help/self-employed-accountants">Self employed</a></li>
-<li id="menu-item-139031" class="nav-industry menu-item menu-item-type-post_type menu-item-object-page menu-item-139031"><a href="https://www.theaccountancy.co.uk/amazon-ecommerce-accountants">Ecommerce</a></li>
-<li id="menu-item-139032" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139032"><a href="https://www.theaccountancy.co.uk/medical-accountants">Medical</a></li>
-<li id="menu-item-139033" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139033"><a href="https://www.theaccountancy.co.uk/property-accountants">Property</a></li>
-</ul>        </div>
-
-        <div class=" grid-col-span-2 grid-row-span-1 footer-services">
-            <h4 class="white-text"> Services </h4>
-            <ul id="menu-footer-services" class=""><li id="menu-item-139034" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139034"><a href="https://www.theaccountancy.co.uk/services/annual-accounts">Accounts</a></li>
-<li id="menu-item-139035" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139035"><a href="https://www.theaccountancy.co.uk/services/tax-return-service">Tax returns</a></li>
-<li id="menu-item-139036" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139036"><a href="https://www.theaccountancy.co.uk/services/vat-return-services">VAT returns</a></li>
-<li id="menu-item-139037" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139037"><a href="https://www.theaccountancy.co.uk/services/bookkeeping-services">Bookkeeping</a></li>
-<li id="menu-item-139038" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139038"><a href="https://www.theaccountancy.co.uk/services/outsourced-payroll-services">Payroll</a></li>
-<li id="menu-item-176542" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-176542"><a href="https://www.theaccountancy.co.uk/services/self-assessment">Self Assessment</a></li>
-<li id="menu-item-139039" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139039"><a href="https://www.theaccountancy.co.uk/services/cis-returns">CIS Returns</a></li>
-<li id="menu-item-139040" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139040"><a href="https://www.theaccountancy.co.uk/limited-company-formations">Company formations</a></li>
-</ul>        </div>
-
-        <div class="grid-col-span-3 grid-row-span-1 footer-resources">
-            <h4 class="white-text"> Resources </h4>
-            <ul id="menu-footer-resources" class=""><li id="menu-item-139042" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139042"><a href="https://www.theaccountancy.co.uk/plans-and-pricing">Plans and pricing</a></li>
-<li id="menu-item-139043" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139043"><a href="https://www.theaccountancy.co.uk/making-tax-digital-support-centre">Making Tax Digital support</a></li>
-<li id="menu-item-139045" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139045"><a href="https://www.theaccountancy.co.uk/brexit-vat-support-centre-for-businesses">Brexit VAT support</a></li>
-<li id="menu-item-139046" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139046"><a href="https://www.theaccountancy.co.uk/changing-accountants">Changing accountants</a></li>
-<li id="menu-item-139047" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139047"><a href="https://www.theaccountancy.co.uk/free-bookkeeping-software">Free bookkeeping software</a></li>
-<li id="menu-item-139049" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139049"><a href="https://www.theaccountancy.co.uk/guides-videos">Guides &#038; videos</a></li>
-<li id="menu-item-139050" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139050"><a href="https://www.theaccountancy.co.uk/accountancy-news-and-articles">Blog</a></li>
-<li id="menu-item-139051" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139051"><a href="https://www.theaccountancy.co.uk/ask-an-accountant-a-question-for-free">Ask an accountant</a></li>
-<li id="menu-item-139054" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139054"><a href="https://www.theaccountancy.co.uk/calculators">Tax calculators</a></li>
-<li id="menu-item-139055" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139055"><a href="https://www.theaccountancy.co.uk/quotation">Instant quote</a></li>
-<li id="menu-item-139056" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-139056"><a href="https://support.theaccountancy.co.uk/en">Help centre</a></li>
-<li id="menu-item-198853" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-198853"><a href="https://www.theaccountancy.co.uk/key-accounting-and-tax-year-dates">Tax year dates</a></li>
-</ul>        </div>
-
-        <div class="grid-col-span-4 grid-row-span-1 footer-about">
-            <h4 class="white-text"> About </h4>
-            <ul id="menu-footer-about" class=""><li id="menu-item-139057" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139057"><a href="https://www.theaccountancy.co.uk/about-us">About us</a></li>
-<li id="menu-item-139058" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139058"><a href="https://www.theaccountancy.co.uk/about-us/meet-the-team">Meet the team</a></li>
-<li id="menu-item-139059" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139059"><a href="https://www.theaccountancy.co.uk/contact">Contact us</a></li>
-<li id="menu-item-139060" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139060"><a href="https://www.theaccountancy.co.uk/about-us/recruitment">Recruitment</a></li>
-<li id="menu-item-139061" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139061"><a href="https://www.theaccountancy.co.uk/about-us/case-studies">Case studies</a></li>
-<li id="menu-item-139062" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139062"><a href="https://www.theaccountancy.co.uk/privacy-policy">Privacy policy</a></li>
-<li id="menu-item-139063" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139063"><a href="https://www.theaccountancy.co.uk/affiliate-referral-programme">Affiliate scheme</a></li>
-</ul>        </div>
-
-        <div class="grid-col-span-5 grid-row-span-1">
-        </div>
-
-        <div class=" grid-col-span-6 grid-row-span-1 footer-contact">
-            <h4 class="white-text"> Contact </h4>
-            <p class="white-text"> Telephone: 00000000000 </p>
-            <a href="mailto: info@theaccountancy.co.uk" class="bold white-text link">info@theaccountancy.co.uk</a>
-            <br><br>
-            <p class="white-text"> Address: </p>
-            <p class="white-text"> Twelve Quays House </p>
-            <p class="white-text"> Egerton Wharf </p>
-            <p class="white-text"> Wirral </p>
-            <p class="white-text"> CH41 1LD </p>
-            <p class="white-text"> We also have a <a href="https://www.theaccountancy.co.uk/london-accountants" class="bold link">London</a> office</p>
-
-            <!-- TrustBox -->
-            <script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.theaccountancy.co.uk/wp-content/cache/min/1/bootstrap/v5/tp.widget.bootstrap.min.js?ver=1688568227" defer></script>
-            <!-- End TrustBox -->
-            <!-- TrustBox widget - Mini -->
-            <div class="trustpilot-widget-container">
-                <div class="trustpilot-widget" data-locale="en-GB" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="52c1b3cd000064000577be4f" data-style-height="150px" data-style-width="100%" data-theme="dark">
-                    <a href="https://uk.trustpilot.com/review/www.theaccountancy.co.uk" target="_blank" rel="noopener">Trustpilot</a>
-                </div>
-            </div>
-            <!-- End TrustBox widget -->
-        </div>
-
-        <div class="grid-col-span-1-6 footer-copyright pt2 pb2 grid-row-span-3">
-            <p class="white-text copyright-snippet">
-                &copy; The Accountancy Partnership 2023 <br><br>
-                Registered in England and Wales No. <span class="bold white-text nobr">07083629</span> | ICPA membership number <span class="bold white-text nobr">1805</span> | VAT Registration No. <span class="bold white-text nobr">106 6800 33</span> | Data Protection Registration No. <span class="bold white-text nobr">Z2264995</span>
-            </p>
-        </div>
-
-        <div class="grid-col-span-6 footer-social pt3 pb2 grid-row-span-3">
-            <a href="https://www.linkedin.com/company/the-accountancy-partnership"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://twitter.com/accountancypart"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.facebook.com/theaccountancypartnership"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.youtube.com/channel/UCB3RGzS9AiT6hKClaPBDEsw/"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/theaccountancypartnership/?hl=en"><i class="fab fa-instagram"></i></a>
-        </div>
-
-    </div>
-</div>
-
-
 <!-- Landing Footer -->
 <div class="landing-footer ">
     <div class="full-width-grid grid-row-auto grid-col-5">
 
-        <!-- <div class="grid-col-span-1-6 footer-copyright pt2 pb2 grid-row-span-2">
-            <p class="white-text copyright-snippet">
-                &copy; The Accountancy Partnership 2023 <br><br>
-                Registered in England and Wales No. <span class="bold white-text nobr">07083629</span> | ICPA membership number <span class="bold white-text nobr">1805</span> | VAT Registration No. <span class="bold white-text nobr">106 6800 33</span> | Data Protection Registration No. <span class="bold white-text nobr">Z2264995</span>
-            </p>
-        </div> -->
-
-
     </div>
 </div>
 
-
-<!-- Much More Modal -->
-<div id="MuchMoreModal" class="modal">
-    <div class="modal-content">
-        <span class="MuchMoreclose close">&times;</span>
-        <div id="muchmoremodalcontent">
-            <div class="included-item-container">
-
-                <div class="center-contents pb3">
-                    <h2>What else is included in our accountancy packages?</h2>
-                    <h4>If you have any questions about our services please call us on <span class="quote-phone"> 00000000000 </span> </h4>
-                </div>
-
-                <div class="included-item">
-                    <img style="width: 30px; height: 30px;"  loading="lazy" data-src="/wp-content/uploads/2019/03/unlimited-help.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                    <p>Unlimited support via phone or email</p>
-                </div>
-
-                <div class="included-item">
-                    <img style="width: 30px; height: 30px;"  loading="lazy" data-src="/wp-content/uploads/2019/03/automatic-reminders.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                    <p>Automated reminders for your important deadlines</p>
-                </div>
-
-                <div class="included-item">
-                    <img style="width: 30px; height: 30px;"  loading="lazy" data-src="/wp-content/uploads/2019/03/regular-recommendations.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                    <p>Annual tax efficiency reviews to reduce your tax bill</p>
-                </div>
-
-                <div class="included-item">
-                    <img style="width: 30px; height: 30px;"  loading="lazy" data-src="/wp-content/uploads/2019/03/website-review.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                    <p>Proactive checks of your bookkeeping on Pandle</p>
-                </div>
-
-                <div class="included-item">
-                    <img style="width: 30px; height: 30px;"  loading="lazy" data-src="/wp-content/uploads/2019/03/cloud-software.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                    <p>Automated bank feeds to speed up your bookkeeping</p>
-                </div>
-
-                <div class="included-item">
-                    <img style="width: 30px; height: 30px;"  loading="lazy" data-src="/wp-content/uploads/2021/01/client-feedback2.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                    <p>Live chat support on our bookkeeping software</p>
-                </div>
-
-                <div class="included-item">
-                    <img style="width: 30px; height: 30px;"  loading="lazy" data-src="/wp-content/uploads/2019/06/tap_mobile_app.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                    <p>Mobile app to invoice customers & upload receipts</p>
-                </div>
-
-                <div class="included-item">
-                    <img style="width: 30px; height: 30px;"  loading="lazy" data-src="/wp-content/uploads/2019/03/dedicated-accountant.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-                    <p>Free representation during a HMRC investigation</p>
-                </div>
-
-                <div class="center-contents pt3">
-                    <a class="cta-button modal_button" id="MuchMoreCTA"> <i class="fas fa-calculator"></i>Get a quote right away </a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <!-- Quotation Modal -->
@@ -711,7 +614,6 @@ c
 
                 <div style="text-align:center;width:100%;line-height:614px;">
 
-                    <i style="vertical-align:center;" class="fa fa-3x fa-spinner fa-spin"></i>
 
                 </div>
 
@@ -719,7 +621,7 @@ c
 
 
             <div class="modal-footer" id="modal-footer">
-                <button type="button" class="cta-button quotation-submit-button"><i class="fa fa-calculator"></i> Get a quote right away</button>
+                <button type="button" class="cta-button quotation-submit-button multPop"> Get a quote right away</button>
                 <span class="thirdparty"> We will never share your details with any third-party. Please see our <a style="font-size: 0.75rem;" href="https://www.theaccountancy.co.uk/privacy-policy">Privacy Policy</a> for more details.</span>
             </div>
 
@@ -891,228 +793,49 @@ c
 <input type="hidden" id="pid" value="186047" />
 
 
-<!-- Much More Modal -->
-<script type="rocketlazyloadscript">
-    // Get modal
-    var muchmoremodal = document.getElementById('MuchMoreModal');
-    // Get button that opens the modal
-    var btn = document.getElementById("MuchMoreButtonOpen");
-    // Get button that opens quote
-    var muchmorectabtn = document.getElementById("MuchMoreCTA");
-    // Get <span> element that closes the modal
-    var span = document.getElementsByClassName("MuchMoreclose")[0];
-    // When user clicks the button, open the modal
-    if (btn !== null) {
-        btn.onclick = function() {
-            muchmoremodal.style.display = "block";
+
+
+
+
+
+
+<!-- Usama's Custom script -->
+
+<script>
+
+
+// for showing pop box
+
+    let mybtn = document.querySelectorAll(".multPop");
+    
+    let myfun = ()=>{
+      document.getElementById("popParent").classList.add("myActive")
+    }
+    mybtn.forEach(function(btn){
+        btn.addEventListener("click", myfun);
+    })
+    
+
+// for closing pop box
+
+    let closebtn = document.getElementsByClassName("clsbtn")[0];
+    
+    
+    let closepop = ()=>{
+            document.getElementById("popParent").classList.remove("myActive")
+    
         }
-    }
-    // When user clicks the button, open the modal
-    muchmorectabtn.onclick = function() {
-        muchmoremodal.style.display = "none";
-        quotemodal.style.display = "block";
-    }
-    // When user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        muchmoremodal.style.display = "none";
-    }
+
+    closebtn.addEventListener("click", closepop);
+
+
+
+
 </script>
 
 
-    <!-- Bootstrap JS - used only for quotation system -->
-    <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.theaccountancy.co.uk/wp-content/cache/min/1/wp-content/themes/tap/assets/js/min/popper.js?ver=1688568227" defer></script>
-    <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.theaccountancy.co.uk/wp-content/cache/min/1/bootstrap/4.3.1/js/bootstrap.min.js?ver=1688568227" data-rocket-type="text/javascript" defer></script>
-    <!-- Script from old TAP site -->
-    <script type="rocketlazyloadscript" data-rocket-src="https://www.theaccountancy.co.uk/wp-content/themes/tap/assets/js/min/jquery.deserialize.min.js" defer></script>
 
 
-    <!-- Animation Library -->
-    <link data-minify="1" href="https://www.theaccountancy.co.uk/wp-content/cache/min/1/aos@2.3.1/dist/aos.css?ver=1688568227" rel="stylesheet">
-    <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.theaccountancy.co.uk/wp-content/cache/min/1/aos@2.3.1/dist/aos.js?ver=1688568228"></script>
-    <script type="rocketlazyloadscript">
-        AOS.init();
-    </script>
-
-    <script type="rocketlazyloadscript">
-        jQuery.ajax({
-            type: 'POST',
-            url: 'https://www.theaccountancy.co.uk/wp-admin/admin-ajax.php',
-            data: {
-                action: 'setCookies',
-                url: window.location.href
-            }
-        }).done(function(response) {
-
-        }).fail(function () {
-            console.log('Cookies Error');
-        });
-
-    function manageDiscount() {
-        let priceElements = document.querySelectorAll('.card-price h4.blue-text, .js-price');
-        let page = document.getElementById('pid').value;
-
-        priceElements.forEach(function(priceElement) {
-            let price = priceElement.innerText;
-            
-            if(price.indexOf('£') > -1) {
-                price = parseFloat(price.replace('£', '')).toFixed(2);
-                type = 'pound'
-            } else if(price.indexOf('p') > -1) {
-                price = parseFloat(price.replace('p', ''));
-                type = 'pence';
-            }
-                
-                jQuery.ajax({
-                type: 'POST',
-                url: 'https://www.theaccountancy.co.uk/wp-admin/admin-ajax.php',
-                data: {
-                    action: 'getDiscountPriceDisplay',
-                    value: price,
-                    type: type,
-                    page: parseInt(page),
-                    class: priceElement.className
-                }
-            }).done(function(response) {
-                jQuery(priceElement).replaceWith(response);
-            }).fail(function () {
-                console.log('Error');
-            });
-
-            }
-        );
-
-    }
-
-    manageDiscount();
-</script>
-    
-
-    <script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.theaccountancy.co.uk/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=1688568228' id='swv-js'></script>
-<script type='text/javascript' id='contact-form-7-js-extra'>
-/* <![CDATA[ */
-var wpcf7 = {"api":{"root":"https:\/\/www.theaccountancy.co.uk\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
-/* ]]> */
-</script>
-<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.theaccountancy.co.uk/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1688568228' id='contact-form-7-js'></script>
-<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
-"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
-</script>
-<script type='text/javascript' id='rocket-preload-links-js-extra'>
-/* <![CDATA[ */
-var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.theaccountancy.co.uk","onHoverDelay":"100","rateThrottle":"3"};
-/* ]]> */
-</script>
-<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
-(function() {
-"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
-}());
-</script>
-<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.theaccountancy.co.uk/wp-content/cache/min/1/wp-content/themes/tap/assets/js/min/theme.js?ver=1688568228' id='theme-js'></script>
-<script type='text/javascript' id='wpcf7cf-scripts-js-extra'>
-/* <![CDATA[ */
-var wpcf7cf_global_settings = {"ajaxurl":"https:\/\/www.theaccountancy.co.uk\/wp-admin\/admin-ajax.php"};
-/* ]]> */
-</script>
-<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.theaccountancy.co.uk/wp-content/cache/min/1/wp-content/plugins/contact-form-7-conditional-fields-pro/js/scripts.js?ver=1688568228' id='wpcf7cf-scripts-js'></script>
-<script data-minify="1" type='text/javascript' src='https://www.theaccountancy.co.uk/wp-content/cache/min/1/wp-content/themes/tap/assets/js/min/lottie.js?ver=1688568228' id='lottie-js'></script>
-    
-    <!-- INTERCOM -->
-          <script type="rocketlazyloadscript">
-        window.addEventListener('DOMContentLoaded', function() {
-            window.intercomSettings = {
-                app_id: "t3iw4zv1"
-            };
-            (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/t3iw4zv1';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
-        });
-    </script>
-
-    
-    <!-- Google Tracking -->
-    <script type="rocketlazyloadscript">
-		!function(e,a,t,n,c,g,o){e.GoogleAnalyticsObject=c,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,g=a.createElement(t),o=a.getElementsByTagName(t)[0],g.async=1,g.src="https://www.google-analytics.com/analytics.js",o.parentNode.insertBefore(g,o)}(window,document,"script",0,"ga");
-		ga('create', 'UA-18216917-1', 'auto');
-		ga('send', 'pageview');
-	</script>
-	<!-- Google Tag Manager -->
-	<script type="rocketlazyloadscript">
-		!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-TQJN66L",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer");
-	</script>
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe  height="0" width="0" style="display:none;visibility:hidden" data-src="https://www.googletagmanager.com/ns.html?id=GTM-TQJN66L" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe></noscript>
-	<!-- Global site tag (gtag.js) - Google Ads: 1009150336 -->
-	<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=AW-1009150336"></script>
-	<script type="rocketlazyloadscript">
-		function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag('config','AW-1009150336', {'allow_enhanced_conversions':true});
-	</script>
-
-    
-
-
-    <!-- Facebook Pixel Code -->
-    <script type="rocketlazyloadscript">
-        !function(e,n,t,o,c,s,a){e.fbq||(c=e.fbq=function(){c.callMethod?c.callMethod.apply(c,arguments):c.queue.push(arguments)},e._fbq||(e._fbq=c),c.push=c,c.loaded=!0,c.version="2.0",c.queue=[],(s=n.createElement(t)).async=!0,s.src="https://connect.facebook.net/en_US/fbevents.js",(a=n.getElementsByTagName(t)[0]).parentNode.insertBefore(s,a))}(window,document,"script");
-        fbq('init', '536326980216652');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=536326980216652&ev=PageView&noscript=1"
-    /></noscript>
-
-
-    <!-- Microsoft -->
-    
-    <script type="rocketlazyloadscript">(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"134615524"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script>
-    <script type="rocketlazyloadscript">
-            function uet_report_conversion(e) {
-                window.uetq = window.uetq || [];
-                if (e != undefined) {
-                    if (jQuery(e.currentTarget).hasClass('modal_button')) {
-                        window.uetq.push('event', 'click', {
-                            "event_label": "get_instant_quote"
-                        });
-                    }
-                    if (jQuery(e.currentTarget).hasClass('gotoformbtn')) {
-                        window.uetq.push('event', 'click', {
-                            "event_label": "register_your_business"
-                        });
-                    }
-                } else {
-                    window.uetq.push("event", "quote", {});
-                }
-            }
-            jQuery('.modal_button').on("click", function(e) {
-                uet_report_conversion(e);
-            });
-    </script>
-
-
-	<!-- Twitter single-event website tag code -->
-    <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.theaccountancy.co.uk/wp-content/cache/min/1/oct.js?ver=1688568228" data-rocket-type="text/javascript"></script>
-    <script type="rocketlazyloadscript" data-rocket-type="text/javascript">twttr.conversion.trackPid('o85ad', { tw_sale_amount: 0, tw_order_quantity: 0 });</script>
-    <noscript>
-    <img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=o85ad&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
-    <img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=o85ad&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
-    </noscript>
-    <!-- End Twitter single-event website tag code -->
-
-    <!-- LinkedIn Tracking -->
-    <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
-    _linkedin_partner_id = "4796402";
-    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-    </script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">
-    (function(l) {
-    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
-    window.lintrk.q=[]}
-    var s = document.getElementsByTagName("script")[0];
-    var b = document.createElement("script");
-    b.type = "text/javascript";b.async = true;
-    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-    s.parentNode.insertBefore(b, s);})(window.lintrk);
-    </script>
-    <noscript>
-    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=4796402&fmt=gif" />
-    </noscript>
 
 
     <input type="hidden" id="wpid" name="wpid" value="186047">
@@ -1121,4 +844,3 @@ var wpcf7cf_global_settings = {"ajaxurl":"https:\/\/www.theaccountancy.co.uk\/wp
     </style>
 </body>
 </html>
-<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
